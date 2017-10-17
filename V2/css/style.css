@@ -1,0 +1,56 @@
+body{
+  background-image: url(https://i.imgur.com/sbLdfEg.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  font-family: sans-serif;
+  font-size: 20px;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: 59, 89, 152;
+}
+
+.navbar {
+  float: left;
+}
+
+.navbar button {
+  color: #fff;
+  border: none;
+  line-height: 30px;
+  cursor: pointer;
+  background-color: rgba(59, 89, 152, 0.3);
+}
+
+.navbar button:hover {
+  background-color: #000;
+}
+
+.regdiv {
+  float: right;
+}
+
+.regbar {
+  background-color: rgba(128, 22, 184, 0.2);
+  display: inline;
+}
+
+.regbar input {
+  border: none;
+  line-height: 30px;
+}
+
+.regbar button {
+  color: #fff;
+  border: none;
+  line-height: 30px;
+  cursor: pointer;
+  background-color: rgba(59, 89, 152, 0.3);
+}
+
+.regbar button:hover {
+  background-color: #000;
+}

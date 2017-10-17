@@ -25,4 +25,4 @@
     $tab["passwd"] = hash('whirlpool', $_POST["passwd"]);
     $arr_lp[] = $tab;
     file_put_contents("../private/passwd", serialize($arr_lp));
-    header("Location: ../index.html");
+    header("Location: ../index.php");
