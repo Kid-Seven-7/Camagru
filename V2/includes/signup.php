@@ -4,18 +4,18 @@ if (isset($_POST['submit']))
 {
     include_once('db.php');
 
-    $username = mysqli_real_escape_string($conn, $_POST['user_name']);
+    $username = mysqli_real_escape_string($conn, $_POST['username']);
     $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $passwd = mysqli_real_escape_string($conn, $_POST['passwd']);
+    $passwd = mysqli_real_escape_string($conn, $_POST['password']);
 
     //Error handling
     //Empty fields
-    if (empty($username) || empty($email) || empty('passwd'))
+    /*if (empty($username) || empty($email) || empty('password'))
     {
         header("Location: ../index.php?signup=empty");
         exit();
     }
-    else if (!preg_match("/^[a-zA-Z]*$/", $username)) //Checking if the username is characters only
+    else*/ if (!preg_match("/^[a-zA-Z]*$/", $username)) //Checking if the username is characters only
     {
         header("Location: ../index.php?signup=invalid");
         exit();
@@ -43,13 +43,13 @@ if (isset($_POST['submit']))
             //hashing the password
             $hashedPw = password_hash($passwd, PASSWORD_DEFAULT);
             //Insert the user into the database
-            $sql = "INSERT INTO users (user_name, email, passwd, com_code) VALUES ('$username', '$email', '$hashedPw', '$com_code');";
+            $sql = "INSERT INTO users (username, email, password, com_code) VALUES ('$username', '$email', '$hashedPw', '$com_code');";
             mysqli_query($conn, $sql);
 
             //sending the mail
-            $subject = "This shit works";
-            $msg = "What the fuck";
-            $headers = 'From: amatshiy@student.wethinkcode.co.za';
+            $subject = "verification";
+            $msg = "Dear $username your verification code is $com_code";
+            $headers = 'From: jngoma@student.wethinkcode.co.za';
             mail($email, $subject, $msg, $headers);
             header("Location: ../index.php?signup=verify");
             exit();
