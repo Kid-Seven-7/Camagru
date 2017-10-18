@@ -1,6 +1,6 @@
 <header>
   <nav>
-    <div class="main-wrapper">
+    <div class="head-wrapper">
       <ul>
         <li>
           <a href="index.php">
@@ -9,16 +9,13 @@
         </li>
       </ul>
       <div class="nav-login">
-        <form>
+        <form action="includes/validate.inc.php">
           <input type="text" name="uid"  placeholder="username/email">
           <input type="password" name="pwd"  placeholder="password">
           <button type="submit" name="submit">
             Login
           </button>
         </form>
-        <a href="signup.php">
-          Register
-        </a>
       </div>
     </div>
   </nav>

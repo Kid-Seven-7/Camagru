@@ -12,6 +12,9 @@
           <h2>
             Digital Sunset
           </h2>
+          <a href="signup.php">
+            Register
+          </a>
         </div>
     </section>
 <?php
