@@ -132,16 +132,20 @@ a {
   text-align: center;
 }
 
+.main-wrapper a {
+  position: fixed;
+  padding: 4% 48%;
+  color: #D714C3;
+}
+
 /* HEADER.PHP */
 .head-wrapper {
   margin: 0 auto;
   width: 1000px;
 }
 
-.main-wrapper a {
-  position: fixed;
-  padding: 4% 50%;
-  color: #D714C3;
+.head-wrapper ul li a{
+  margin-left: 20px;
 }
 
 header nav {
@@ -264,4 +268,29 @@ footer {
 
 .signup-form button:hover {
   background-color: #111;
+}
+
+/* CAMERA.PHP */
+#cam {
+  position: fixed;
+  top: 110px;
+  left: 10%;
+}
+
+#cam a {
+  position: relative;
+  padding-top: 20px;
+  left: 50%;
+  color: #fff;
+}
+
+#cam img {
+}
+
+.view {
+  float: left;
+}
+
+.image {
+  float: right;
 }

@@ -18,10 +18,10 @@
     echo "<script>alert('Please enter a password that is at least 8 characters long')</script>";
   }
   if (isset($_GET['signup']) && $_GET['signup'] == "pwd_dont_match") {
-    echo "<script>alert('congratulation $first you registration was successful')</script>";
+    echo "<script>alert('The passwords that you entered do not match')</script>";
   }
   if (isset($_GET['signup']) && $_GET['signup'] == "success") {
-    echo "<script>alert('congratulation $first you registration was successful')</script>";
+    echo "<script>alert('congratulation your registration was successful, please confirm your email address')</script>";
   }
 ?>
 
@@ -40,12 +40,12 @@
             Signup
           </h2>
           <form class="signup-form" action="includes/signup.inc.php" method="post">
-            <input type="text" name="first" placeholder="Firstname">
-            <input type="text" name="last" placeholder="Lastname">
-            <input type="text" name="email" placeholder="E-mail">
-            <input type="text" name="uid" placeholder="Username">
-            <input type="password" name="pwd" placeholder="Password">
-            <input type="password" name="pwd1" placeholder="Confirm Password">
+            <input type="text" name="first" placeholder="Firstname" required>
+            <input type="text" name="last" placeholder="Lastname" required>
+            <input type="text" name="email" placeholder="E-mail" required>
+            <input type="text" name="uid" placeholder="Username" required>
+            <input type="password" name="pwd" placeholder="Password" required>
+            <input type="password" name="pwd1" placeholder="Confirm Password" required>
             <button type="submit" name="submit">
               Sign up
             </button>

@@ -7,13 +7,17 @@
             Home
           </a>
         </li>
+        <li>
+          <a href="profile.php">
+            profile
+          </a>
+        </li>
       </ul>
       <div class="nav-login">
-        <form action="includes/validate.inc.php" method="post">
-          <input type="text" name="uid"  placeholder="username/email">
-          <input type="password" name="pwd"  placeholder="password">
+        <form action="includes/validate.inc.php">
+          <input type="text" name="search"  placeholder="Search">
           <button type="submit" name="submit">
-            Login
+            Search
           </button>
         </form>
       </div>
