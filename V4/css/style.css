@@ -1,0 +1,14 @@
+/* MAIN STYLING */
+body {
+  background-image: url(https://i.imgur.com/sbLdfEg.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  font-family: sans-serif;
+  font-size: 20px;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+}
