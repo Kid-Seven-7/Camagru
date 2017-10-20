@@ -6,4 +6,3 @@ if (isset($_POST['sumbit'])) {
   } else {
     //CHECK PASSWORD
   }
-}
