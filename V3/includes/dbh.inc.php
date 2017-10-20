@@ -1,8 +1,12 @@
 <?php
+  $dsn = 'mysql:host=localhost;dbname=loginsystem';
+  $username = 'root';
+  $password = 'joseph07';
 
-$dbservername = "localhost";
-$dbusername = "root";
-$dbpassword = "joseph07";
-$dbname = "loginsystem";
-
-$conn = mysqli_connect($dbservername, $dbusername, $dbpassword, $dbname);
+  try {
+    $db = new PDO($dsn, $username, $password);
+  } catch (PDOException $e) {
+    echo $e->getMessage();
+    exit();
+  }
+?>
