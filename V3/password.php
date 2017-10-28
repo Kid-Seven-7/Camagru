@@ -7,9 +7,11 @@
 <?php
   include_once 'header.php'
 ?>
+    <section class="main-container">
 <?php
-  include_once 'camera.php'
+  include_once 'pwd_form.php'
 ?>
+    </section>
 <?php
     include_once 'footer.php'
 ?>

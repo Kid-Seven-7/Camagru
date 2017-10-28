@@ -7,6 +7,11 @@
             Home
           </a>
         </li>
+        <li>
+          <a href="password.php">
+            Forgot Password?
+          </a>
+        </li>
       </ul>
       <div class="nav-login">
         <form action="includes/validate.inc.php" method="post">
