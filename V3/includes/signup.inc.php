@@ -11,6 +11,8 @@ if (isset($_POST['submit'])) {
     $pwd = mysqli_real_escape_string($conn, $_POST['pwd']);
     $pwd1 = mysqli_real_escape_string($conn, $_POST['pwd1']);
 
+    $_SESSION['uid'] = $uid;
+
     if (!empty($pwd) && !empty($pwd1)) {
       if ($pwd != $pwd1) {
         header("Location: ../signup.php?signup=pwd_dont_match");
@@ -32,37 +34,46 @@ if (isset($_POST['submit'])) {
         if ($resultcheck > 0) {
           header("Location: ../signup.php?signup=email_in_use");
           exit();
-        } if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        } /*if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
           header("Location: ../signup.php?signup=invalid_email");
           exit();
-        } else {
+        }*/ else {
           $sql = "SELECT * FROM users WHERE user_id='$uid'";
           $result = mysqli_query($conn, $sql);
           $resultcheck = mysqli_num_rows($result);
           if ($resultcheck > 0) {
             header("Location: ../signup.php?signup=username_taken");
             exit();
-          } else {
+          } /*else {
             if (strlen($pwd) < 8) {
               header("Location: ../signup.php?signup=password_too_short");
               exit();
-            } else {
-              $confirmcode = rand();
-              $hashedpwd = password_hash($pwd, PASSWORD_DEFAULT);
-              $sql = "INSERT INTO users (user_first, user_last, user_email, user_uid, user_pwd, com_code, confirmed) VALUES ('$first', '$last', '$email', '$uid', '$hashedpwd', '$confirmcode', '0');";
-              mysqli_query($conn, $sql);
+            }*/ else {
+            try {
+                $dbh = new PDO("mysql:host=127.0.0.1;dbname=camagru",'root','joseph07');
+
+                $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // <== add this line
+                $sql = "INSERT INTO users (first, last, email, uid, status, con_code, pwd)
+                VALUES ('$first, $last, $email, $uid, $status, $con_code, $pwd')";
+                if ($dbh->query($sql)) {
+                  echo "<script type= 'text/javascript'>alert('New Record Inserted Successfully');</script>";
+                }
+                else{
+                  echo "<script type= 'text/javascript'>alert('Data not successfully Inserted.');</script>";
+                }
               $message = "
                 Confirm your email
                 Please click the link below to verify your email
                 http://localhost:8080/V3/emailconfirm.php?username=$username&code=$confirmcode
               ";
               mail($email, "Email verification", $message, "From: DoNotReply@digitalsunset.org");
+              $_SESSION['connect'] = 1;
               header("Location: ../signup.php?signup=success");
               exit();
             }
           }
         }
-      }
+      //}
     //}
 } else {
   header("Location: ../signup.php");

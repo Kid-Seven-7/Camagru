@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <header>
   <nav>
     <div class="head-wrapper">
