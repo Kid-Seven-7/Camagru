@@ -50,17 +50,18 @@ if (isset($_POST['submit'])) {
               exit();
             }*/ else {
             try {
-                $dbh = new PDO("mysql:host=127.0.0.1;dbname=camagru",'root','joseph07');
+                $conn = new PDO($dsn, $username, $password);
 
-                $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // <== add this line
+                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // <== add this line
                 $sql = "INSERT INTO users (first, last, email, uid, status, con_code, pwd)
                 VALUES ('$first, $last, $email, $uid, $status, $con_code, $pwd')";
-                if ($dbh->query($sql)) {
-                  echo "<script type= 'text/javascript'>alert('New Record Inserted Successfully');</script>";
+                $conn->exec();
+                 echo "Success";
+            }
+                catch(PDOException $e){
+                  echo $sql . "<br>" . $e->getMessage();
                 }
-                else{
-                  echo "<script type= 'text/javascript'>alert('Data not successfully Inserted.');</script>";
-                }
+                $sql = null;
               $message = "
                 Confirm your email
                 Please click the link below to verify your email
