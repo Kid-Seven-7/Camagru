@@ -1,0 +1,8 @@
+.thumbnails {
+  width: 10px;
+  float: left;
+  margin: 10px;
+  background: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+}
