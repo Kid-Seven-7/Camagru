@@ -72,17 +72,12 @@ catch(PDOException $e)
 
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>Login</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-
+<?php include_once 'head.php'; ?>
 <body>
     <div class="pen-title">
         <h1>PixelX</h1>
     </div>
-    
+
     <div class="module form-module">
         <div class="toggle">
         </div>
@@ -92,6 +87,6 @@ catch(PDOException $e)
                 <button formaction="login.php">Login</button>
             </form>
         </div>
-    </div>  
+    </div>
 </body>
 </html>

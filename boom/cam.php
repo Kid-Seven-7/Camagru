@@ -18,11 +18,7 @@ else
 ?>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Login</title>
-        <link rel="stylesheet" href="css/style.css">
-    </head>
+    <?php include_once 'head.php'; ?>
     <body>
         <div class="booth">
             <video id="video" width="400" height="300"></video>
@@ -38,7 +34,7 @@ else
                 canvas = document.getElementById('canvas'),
                 context = canvas.getContext('2d');
                 vendorUrl = window.URL || window.webkitURL;
-                
+
                 navigator.getMedia = navigator.getUserMedia ||
                 navigator.webkitGetUserMedia ||
                 navigator.mozGetUserMedia ||
@@ -52,7 +48,7 @@ else
                 }, function (error) {
                     //I will display an error
                 });
-                
+
                 document.getElementById('capture').addEventListener('click', function() {
                     context.drawImage(video, 0, 0, 400, 300);
                     var raw = canvas.toDataURL("image/png");

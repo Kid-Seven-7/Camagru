@@ -89,12 +89,7 @@ else if (isset($_GET['verify']) && $_GET['verify'] == 1)
 
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>Login</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-
+<?php include_once 'head.php'; ?>
 <body>
 <div class="pen-title">
     <h1>PixelX</h1>

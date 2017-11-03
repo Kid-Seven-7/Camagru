@@ -87,12 +87,7 @@ else
 
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>Change password</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-
+<?php include_once 'head.php'; ?>
 <body>
 <div class="pen-title">
     <h1>PixelX</h1>
