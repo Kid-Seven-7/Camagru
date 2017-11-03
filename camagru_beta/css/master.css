@@ -1,0 +1,81 @@
+/* MAIN */
+body {
+  background-color: green;
+}
+
+/* HEADER.PHP */
+.headerClass {
+  position: fixed;
+  top: 20px;
+  width: 100%;
+}
+
+.navHyperLinks {
+  float: left;
+  width: 40%;
+}
+
+header ul {
+  display: inline;
+}
+
+header li {
+  display: inline;
+}
+
+header ul li a {
+  margin-right: 20px;
+  text-decoration: none;
+}
+
+.navLogin {
+  float: right;
+  width: 40%;
+}
+
+.navLogin input {
+  line-height: 20px;
+}
+
+.navLogin button {
+  line-height: 20px;
+}
+
+/* SECTION.PHP */
+.sectionClass {
+  position: fixed;
+  top: 50px;
+}
+
+.mainDivClass {
+  border-style: solid;
+  width: 1500%;
+}
+
+.leftMain {
+  float: left;
+  width: 500%;
+}
+
+.rightMain {
+  float: right;
+  width: 500%;
+}
+
+/* FOOTER.PHP */
+.footerClass {
+  position: fixed;
+  bottom: 20px;
+}
+/* INDEX.PHP */
+/* .PHP */
+/* .PHP */
+/* .PHP */
+/* .PHP */
+/* .PHP */
+/* .PHP */
+/* .PHP */
+/* .PHP */
+/* .PHP */
+/* .PHP */
+/* .PHP */
