@@ -1,2 +1,0 @@
-# webproject
-WeThinkCode_ Project
