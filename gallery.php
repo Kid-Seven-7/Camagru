@@ -17,15 +17,15 @@
     </div>
 
     <script>
-    //Header 
+    //Header
     function myFunction()
     {
       var x = document.getElementById("myTopnav");
-      if (x.className === "topnav") 
+      if (x.className === "topnav")
       {
         x.className += " responsive";
-        } 
-        else 
+        }
+        else
         {
           x.className = "topnav";
           }
@@ -91,7 +91,7 @@ try
   {
     $page = $_GET['page'];
   }
-  
+
   $this_page_first_result = ($page - 1) * $results_per_page;
 
   //getting the limited data from the database
@@ -105,7 +105,7 @@ try
     $user = $row['user'];
 
     //count the number of likes here!!!!
-    try 
+    try
     {
       $conn2 = new PDO($DB_DSN, $DB_USER, $DB_PASSWORD);
       $conn2->setAttribute(PDO::ATTR_ERRMODE, ERRMODE_EXCEPTION);
